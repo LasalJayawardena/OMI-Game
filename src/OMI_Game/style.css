@@ -1,0 +1,27 @@
+.root{
+    -fx-background-color: #301b3f;
+}
+
+
+.userI{
+    -fx-background-color: #d9e5e5;
+    -fx-font-size: 30px;
+    -fx-padding: 15px 0px;
+    -fx-text-box-border: #d4d75a;
+    -fx-focus-color: #ff0000;
+    -fx-border-width: 10px;
+}
+
+.userBtn:hover{
+    -fx-text-fill: #000000;
+    -fx-cursor: hand;
+}
+
+.progress{
+    -fx-accent: #3c415c;
+    -fx-border-color: #fff600;
+}
+
+.gridpane{
+    -fx-background-color: #301b3f;
+}

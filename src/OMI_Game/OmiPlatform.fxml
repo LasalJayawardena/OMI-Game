@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1400.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OMI_Game.GamePlatform">
+   <center>
+       <GridPane fx:id="entireGrid" maxWidth="-Infinity" minHeight="-Infinity" minWidth="1400.0" prefHeight="1000.0" prefWidth="1400.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="908.0" minWidth="10.0" prefWidth="98.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="908.0" minWidth="10.0" prefWidth="225.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="912.0" minWidth="10.0" prefWidth="744.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="328.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="59.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="401.0" minHeight="10.0" prefHeight="348.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="392.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="370.0" minHeight="10.0" prefHeight="225.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="497.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="497.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <VBox prefHeight="426.0" prefWidth="494.0" GridPane.columnIndex="3" GridPane.rowSpan="2">
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Leaderboard" textAlignment="CENTER" underline="true" wrappingWidth="315.6708984375">
+                   <font>
+                       <Font name="Candara Bold" size="38.0" />
+                   </font>
+                   <VBox.margin>
+                       <Insets bottom="10.0" top="10.0" />
+                   </VBox.margin>
+               </Text>
+               <ListView fx:id="rankings" prefHeight="119.0" prefWidth="317.0" style="-fx-text-fill: 523637;" />
+               <Label alignment="CENTER" prefHeight="57.0" prefWidth="288.0" text="Trick Moves">
+                   <opaqueInsets>
+                       <Insets />
+                   </opaqueInsets>
+                   <VBox.margin>
+                       <Insets top="17.0" />
+                   </VBox.margin>
+                   <font>
+                       <Font name="Candara Bold" size="30.0" />
+                   </font>
+               </Label>
+               <Label fx:id="trickMoves" alignment="CENTER" contentDisplay="CENTER" prefHeight="156.0" prefWidth="286.0">
+                   <font>
+                       <Font name="Candara" size="18.0" />
+                   </font>
+               </Label>
+           </VBox>
+           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <Label fx:id="playBox" alignment="CENTER" prefHeight="60.0" prefWidth="327.0" style="-fx-border-width: 5; -fx-border-color: #dcc6dd; -fx-border-style: solid hidden hidden hidden;" text="Choose Trumps" textAlignment="CENTER" textFill="#dcc6dd">
+                   <font>
+                       <Font size="25.0" />
+                   </font>
+               </Label>
+               <Label fx:id="instructBox" alignment="CENTER" prefHeight="54.0" prefWidth="319.0" text="Enter Trumps" textFill="#dcc6dd">
+                   <opaqueInsets>
+                       <Insets />
+                   </opaqueInsets>
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Label>
+           </VBox>
+           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <TextField fx:id="userBox" alignment="CENTER" onAction="#handleUserMoves" prefHeight="54.0" prefWidth="230.0">
+                   <VBox.margin>
+                       <Insets top="20.0" />
+                   </VBox.margin>
+               <font>
+                  <Font size="19.0" />
+               </font>
+               </TextField>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                   <ImageView fx:id="diamondBtn" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="78.0" focusTraversable="true" onMouseClicked="#handleSuitBtn" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                       <HBox.margin>
+                           <Insets right="20.0" />
+                       </HBox.margin>
+                       <Image url="@../Card_Images/Diamonds.jpg" />
+                   </ImageView>
+                   <ImageView fx:id="spadeBtn" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="78.0" focusTraversable="true" onMouseClicked="#handleSuitBtn" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                       <HBox.margin>
+                           <Insets right="20.0" />
+                       </HBox.margin>
+                       <Image url="@../Card_Images/Spades.jpg" />
+                   </ImageView>
+                   <ImageView fx:id="heartBtn" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="78.0" focusTraversable="true" onMouseClicked="#handleSuitBtn" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                       <HBox.margin>
+                           <Insets right="20.0" />
+                       </HBox.margin>
+                       <Image url="@../Card_Images/Hearts.jpg" />
+                   </ImageView>
+                   <ImageView fx:id="clubBtn" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="78.0" focusTraversable="true" onMouseClicked="#handleSuitBtn" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                       <Image url="@../Card_Images/Clubs.jpg" />
+                   </ImageView>
+               </HBox>
+               <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleUserMoves" prefHeight="33.0" prefWidth="321.0" style="-fx-cursor: hand;" text="Submit Move" textAlignment="CENTER">
+                   <VBox.margin>
+                       <Insets top="20.0" />
+                   </VBox.margin>
+                   <opaqueInsets>
+                       <Insets />
+                   </opaqueInsets>
+               </Button>
+           </VBox>
+           <Label fx:id="messageBox" alignment="CENTER" prefHeight="131.0" prefWidth="316.0" textFill="#dcc6dd" GridPane.columnIndex="3" GridPane.rowIndex="4">
+              <font>
+                  <Font size="20.0" />
+              </font>
+           </Label>
+           <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <buttons>
+                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#ExitProgram" prefHeight="44.0" prefWidth="147.0" style="-fx-cursor: hand;" text="End Game" />
+               </buttons>
+           </ButtonBar>
+           <HBox prefHeight="311.0" prefWidth="363.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2">
+               <ListView fx:id="userDeck" onMouseClicked="#DisplayImages" orientation="HORIZONTAL" prefHeight="311.0" prefWidth="878.0" style="-fx-cursor: hand;">
+                   <HBox.margin>
+                       <Insets right="10.0" />
+                   </HBox.margin>
+                   <opaqueInsets>
+                       <Insets right="10.0" />
+                   </opaqueInsets>
+               </ListView>
+           </HBox>
+           <GridPane style="-fx-background-color: 966c3b;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <VBox prefHeight="200.0" prefWidth="100.0">
+                   <Label alignment="CENTER" prefHeight="85.0" prefWidth="252.0" text="Robot 1" textFill="#dcc6dd">
+                       <font>
+                           <Font size="24.0" />
+                       </font>
+                   </Label>
+                   <ImageView fx:id="r1Card" fitHeight="267.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+                       <!--                           <image>-->
+                       <!--                              <Image url="@../Card_Images/2C.jpg" />-->
+                       <!--                           </image>-->
+                   </ImageView>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                   <Label alignment="CENTER" prefHeight="84.0" prefWidth="255.0" text="Robot 2" textFill="#dcc6dd">
+                       <font>
+                           <Font size="24.0" />
+                       </font>
+                   </Label>
+                   <ImageView fx:id="r2Card" fitHeight="267.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
+                       <!--                           <image>-->
+                       <!--                              <Image url="@../Card_Images/3C.jpg" />-->
+                       <!--                           </image>-->
+                   </ImageView>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                   <Label alignment="CENTER" prefHeight="86.0" prefWidth="258.0" text="Robot 3" textFill="#dcc6dd">
+                       <font>
+                           <Font size="24.0" />
+                       </font>
+                   </Label>
+                   <ImageView fx:id="r3Card" fitHeight="267.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
+                       <!--                           <image>-->
+                       <!--                              <Image url="@../Card_Images/3C.jpg" />-->
+                       <!--                           </image>-->
+                   </ImageView>
+               </VBox>
+           </GridPane>
+           <Label alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="308.0" text="Your Deck" textFill="#dcc6dd" GridPane.columnIndex="2" GridPane.rowIndex="5">
+              <font>
+                  <Font name="Calibri Light" size="39.0" />
+              </font>
+           </Label>
+           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <Label fx:id="trumpBox" alignment="CENTER" prefHeight="97.0" prefWidth="183.0" text="Trumps :  " textFill="#dcc6dd">
+                   <font>
+                       <Font size="27.0" />
+                   </font>
+               </Label>
+               <Label fx:id="numTricks" alignment="CENTER" prefHeight="86.0" prefWidth="195.0" text="Trick : 1" textFill="#dcc6dd">
+                   <font>
+                       <Font size="31.0" />
+                   </font>
+               </Label>
+               <Label alignment="CENTER" prefHeight="73.0" prefWidth="226.0" text="Trick Starter :" textFill="#dcc6dd">
+                   <font>
+                       <Font size="31.0" />
+                   </font>
+               </Label>
+               <Label fx:id="trickStarter" alignment="CENTER" prefHeight="65.0" prefWidth="202.0" text="Robot1" textAlignment="RIGHT" textFill="#dcc6dd">
+                   <font>
+                       <Font size="31.0" />
+                   </font>
+               </Label>
+           </VBox>
+           <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <Label fx:id="Title" alignment="CENTER" prefHeight="100.0" prefWidth="940.0" text="The Game begins!" textFill="#523637">
+                   <font>
+                       <Font size="56.0" />
+                   </font>
+               </Label>
+           </HBox>
+       </GridPane>
+   </center>
+   <opaqueInsets>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

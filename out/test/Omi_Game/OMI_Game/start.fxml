@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OMI_Game.StartGame">
+   <center>
+       <GridPane prefHeight="534.0" prefWidth="836.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="130.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="106.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="687.0" minWidth="10.0" prefWidth="687.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="106.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="130.0"/>
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="63.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="188.0" minHeight="10.0" prefHeight="188.0" vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="330.0" minHeight="10.0" prefHeight="285.0" vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="533.0" minHeight="5.0" prefHeight="228.0" vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="145.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES"/>
+           </rowConstraints>
+           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="150.0" prefWidth="689.0" text="Welcome to Omi"
+                  textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true"
+                  GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <font>
+                  <Font name="Calibri Light" size="85.0"/>
+              </font>
+           </Label>
+           <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               </rowConstraints>
+               <Label alignment="CENTER" prefHeight="87.0" prefWidth="603.0" text="Enter Your Name"
+                      textAlignment="CENTER" textFill="#b4a5a5" GridPane.columnSpan="2">
+                   <font>
+                       <Font size="40.0"/>
+                   </font>
+               </Label>
+               <Button fx:id="UserBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false"
+                       onAction="#submitName" prefHeight="75.0" prefWidth="273.0" styleClass="userBtn"
+                       text="Start Game ➜" textAlignment="RIGHT" textFill="#787966" textOverrun="CLIP"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+               <TextField fx:id="UserIn" alignment="CENTER" minHeight="-Infinity" onKeyPressed="#checkEnter"
+                          styleClass="userI" GridPane.rowIndex="1"/>
+           </GridPane>
+           <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#ExitProgram" prefHeight="62.0"
+                   prefWidth="131.0" text="⬅ Exit" textFill="#d03939" GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+           <ProgressBar fx:id="prog" prefHeight="38.0" prefWidth="679.0" progress="0.0" styleClass="progress"
+                        GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+       </GridPane>
+   </center>
+</BorderPane>
