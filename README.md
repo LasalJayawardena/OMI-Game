@@ -1,1 +1,3 @@
 # OMI Game
+
+## Technologies:
